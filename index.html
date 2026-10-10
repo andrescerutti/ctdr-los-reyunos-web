@@ -9,12 +9,12 @@
 <link rel="canonical" href="https://andrescerutti.github.io/ctdr-los-reyunos-web/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="CTDR Los Reyunos · UTN San Rafael">
-<meta property="og:description" content="Centro Tecnológico de Desarrollo Regional Los Reyunos: académica, investigación y turismo universitario sobre el embalse.">
-<meta property="og:image" content="https://andrescerutti.github.io/ctdr-los-reyunos-web/assets/img/pileta-infinita.jpg">
+<meta property="og:description" content="Formación, investigación aplicada y vinculación con el territorio desde el sur de Mendoza.">
+<meta property="og:image" content="https://andrescerutti.github.io/ctdr-los-reyunos-web/assets/img/fachada.jpg">
 <meta property="og:locale" content="es_AR">
 <link rel="icon" href="assets/img/logo-utn-frsr.png">
-<link rel="preload" as="image" href="assets/img/pileta-infinita.jpg" fetchpriority="high">
-<meta name="description" content="Centro Tecnológico de Desarrollo Regional Los Reyunos — UTN Facultad Regional San Rafael.">
+<link rel="preload" as="image" href="assets/img/fachada.jpg" fetchpriority="high">
+<meta name="description" content="Centro Tecnológico de Desarrollo Regional Los Reyunos, UTN Facultad Regional San Rafael: formación, investigación aplicada y vinculación con el territorio.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,300;1,9..144,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -90,16 +90,29 @@ nav a:hover::after,nav a.on::after{transform:scaleX(1)}
 .dots button.on::after{content:"";position:absolute;inset:0;background:var(--copper);animation:fill 6s linear forwards}
 @keyframes fill{from{transform:scaleX(0);transform-origin:left}to{transform:scaleX(1);transform-origin:left}}
 
-/* Barra de reservas */
-.book{position:absolute;z-index:4;left:50%;bottom:0;transform:translate(-50%,50%);width:min(1100px,100% - 2.5rem);background:var(--paper);color:var(--ink);display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;box-shadow:0 30px 60px -20px rgba(8,16,36,.55)}
+/* Franja de pilares bajo el hero */
+.strip{position:absolute;z-index:4;left:50%;bottom:0;transform:translate(-50%,50%);width:min(1100px,100% - 2.5rem);background:var(--paper);color:var(--ink);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));box-shadow:0 30px 60px -20px rgba(8,16,36,.55)}
+.strip a{display:flex;flex-direction:column;gap:.25rem;padding:1.3rem 1.6rem;border-right:1px solid var(--line);text-decoration:none;transition:background .25s}
+.strip a:last-child{border-right:0}
+.strip a:hover{background:var(--paper-2)}
+.strip small{font:600 .64rem var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--copper-dark)}
+.strip b{font-family:var(--display);font-weight:500;font-size:1.25rem;line-height:1.1}
+.strip span{font-size:.86rem;color:var(--ink-soft)}
+@media(max-width:820px){.hero{flex-direction:column;justify-content:flex-end}.hero-in{padding-bottom:2rem}.dots{display:none}.strip{position:relative;left:auto;bottom:auto;transform:none;width:calc(100% - 2.5rem);margin:0 auto 1.5rem;grid-template-columns:1fr}.strip a{border-right:0;border-bottom:1px solid var(--line)}.intro{padding-top:var(--section)}}
+
+/* Consulta de disponibilidad (dentro de Turismo) */
+.book{margin-top:3.5rem;background:var(--paper-2);border:1px solid var(--line);display:grid;grid-template-columns:1.4fr repeat(3,minmax(0,1fr)) auto}
+.book-t{padding:1.1rem 1.5rem;display:flex;flex-direction:column;justify-content:center;gap:.2rem;border-right:1px solid var(--line)}
+.book-t b{font-family:var(--display);font-weight:500;font-size:1.2rem}
+.book-t span{font-size:.84rem;color:var(--ink-soft)}
 .book label{padding:1.1rem 1.5rem;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:.15rem;cursor:pointer;transition:background .25s}
-.book label:hover{background:var(--paper-2)}
-.book span{font-size:.66rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--copper-dark)}
+.book label:hover{background:var(--paper)}
+.book label>span{font-size:.66rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--copper-dark)}
 .book input,.book select{border:0;background:transparent;min-width:0;font:500 1rem var(--body);color:var(--ink);width:100%}
 .book .go{background:var(--navy);color:#fff;border:0;padding:0 2.2rem;font:600 .86rem var(--body);letter-spacing:.06em;cursor:pointer;transition:background .25s}
 .book .go:hover{background:var(--copper)}
-.book-msg{grid-column:1/-1;margin:0;padding:.55rem 1.5rem;font-size:.82rem;background:var(--paper-2);color:var(--ink-soft);border-top:1px solid var(--line)}.book-msg.err{color:oklch(42% .18 25)}.book-msg[hidden]{display:none}
-@media(max-width:820px){.hero{flex-direction:column;justify-content:flex-end}.hero-in{padding-bottom:2rem}.dots{display:none}.book{position:relative;left:auto;bottom:auto;transform:none;width:calc(100% - 2.5rem);margin:0 auto 1.5rem;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.book .go{grid-column:1/-1;padding:1rem}.book label{border-bottom:1px solid var(--line);padding:.9rem 1rem}.intro{padding-top:var(--section)}}
+.book-msg{grid-column:1/-1;margin:0;padding:.55rem 1.5rem;font-size:.82rem;background:var(--paper);color:var(--ink-soft);border-top:1px solid var(--line)}.book-msg.err{color:oklch(42% .18 25)}.book-msg[hidden]{display:none}
+@media(max-width:900px){.book{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.book-t{grid-column:1/-1;border-right:0;border-bottom:1px solid var(--line)}.book .go{grid-column:1/-1;padding:1rem}.book label{border-bottom:1px solid var(--line);padding:.9rem 1rem}}
 
 /* ───── Bloques ───── */
 .block{padding-block:var(--section)}
@@ -166,7 +179,7 @@ h3{font-family:var(--display);font-weight:500;font-size:1.5rem;line-height:1.15;
 
 /* Turismo */
 .tur-head{display:flex;justify-content:space-between;align-items:end;gap:2rem;flex-wrap:wrap}
-.aloj{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,2vw,2rem);margin-top:3.5rem;align-items:start}
+.aloj{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:clamp(1rem,2vw,2rem);margin-top:3.5rem;align-items:start}
 .aloj .photo,.aloj .nofoto{aspect-ratio:4/3}
 .aloj h3{margin:1.1rem 0 .3rem}
 .aloj p{color:var(--ink-soft);font-size:.95rem;max-width:40ch}
@@ -189,9 +202,9 @@ summary::-webkit-details-marker{display:none}
 summary::after{content:"+";font-family:var(--display);font-size:1.5rem;line-height:1;color:oklch(78% .12 55);transition:transform .4s var(--ease)}
 details[open] summary::after{transform:rotate(45deg)}
 details p{margin-top:.6rem;color:oklch(84% .02 250);font-size:.95rem}
-.testi-wrap{background:var(--paper);padding-block:clamp(4rem,8vw,7rem)}
-.testi{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.5rem,3vw,3rem);margin-top:2.5rem}
-.testi blockquote{font-family:var(--display);font-weight:300;font-size:clamp(1.25rem,1.1rem + .7vw,1.65rem);line-height:1.3;letter-spacing:-.01em;position:relative;padding-top:2.6rem}
+.testi-wrap{margin-top:4.5rem;padding-top:2.5rem;border-top:1px solid var(--line)}
+.testi{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.5rem,3vw,3rem);margin-top:1.5rem}
+.testi blockquote{font-family:var(--display);font-weight:300;font-size:clamp(1.1rem,1rem + .5vw,1.35rem);line-height:1.3;letter-spacing:-.01em;position:relative;padding-top:2.6rem}
 .testi blockquote::before{content:"“";position:absolute;top:-.8rem;left:-.1rem;font-size:5rem;line-height:1;color:var(--copper)}
 .testi cite{display:block;margin-top:1rem;font:600 .72rem var(--body);font-style:normal;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
 @media(max-width:860px){.testi{grid-template-columns:1fr}.resto::after{background:rgba(10,16,34,.62)}}
@@ -269,7 +282,7 @@ footer{background:oklch(17% .04 255);color:oklch(80% .02 250);padding-block:3.5r
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
-    <a class="cta" href="#reservas">Reservar</a>
+    <a class="cta" href="#contacto">Contacto</a>
   </div>
 </header>
 
@@ -277,33 +290,31 @@ footer{background:oklch(17% .04 255);color:oklch(80% .02 250);padding-block:3.5r
 <!-- INICIO -->
 <section class="hero" id="inicio" aria-label="Portada">
   <div class="slides" aria-hidden="true">
-    <div class="slide on"><img src="assets/img/pileta-infinita.jpg" alt="" width="1900" height="900" fetchpriority="high"></div>
-    <div class="slide"><img src="assets/img/pileta-embalse.jpg" alt="" width="1900" height="900" loading="lazy"></div>
+    <div class="slide on"><img src="assets/img/fachada.jpg" alt="" width="1900" height="900" fetchpriority="high"></div>
+    <div class="slide"><img src="assets/img/predio-aereo.jpg" alt="" width="1900" height="900" loading="lazy"></div>
     <div class="slide"><img src="assets/img/parque-embalse.jpg" alt="" width="1900" height="900" loading="lazy"></div>
   </div>
   <div class="wrap hero-in">
-    <p class="kicker">UTN · Facultad Regional San Rafael · Mendoza</p>
-    <h1>Un centro universitario sobre el <em>embalse</em></h1>
-    <p class="hero-sub">Académica, investigación y turismo universitario frente a Los Reyunos, en la precordillera de San Rafael.</p>
+    <p class="kicker">Centro Tecnológico de Desarrollo Regional · UTN San Rafael</p>
+    <h1>Conocimiento aplicado al <em>desarrollo regional</em></h1>
+    <p class="hero-sub">Formación, investigación y vinculación con el territorio desde el sur de Mendoza, en un predio de la UTN sobre el embalse Los Reyunos.</p>
   </div>
   <div class="dots" role="group" aria-label="Imágenes de portada"><button class="on" aria-label="Imagen 1"></button><button aria-label="Imagen 2"></button><button aria-label="Imagen 3"></button></div>
-  <form class="book" id="reservas" aria-label="Consultar disponibilidad" novalidate>
-    <label for="f-in"><span>Llegada</span><input id="f-in" name="llegada" type="date" required></label>
-    <label for="f-out"><span>Salida</span><input id="f-out" name="salida" type="date" required></label>
-    <label for="f-guests"><span>Huéspedes</span><select id="f-guests" name="huespedes"><option>2 adultos</option><option>1 adulto</option><option>3 adultos</option><option>4 adultos</option></select></label>
-    <button class="go" type="submit">CONSULTAR</button>
-    <p class="book-msg" id="book-msg" hidden aria-live="polite"></p>
-  </form>
+  <nav class="strip" aria-label="Ejes del centro">
+    <a href="#academica"><small>01</small><b>Académica</b><span>Posgrados, cursos y capacitaciones</span></a>
+    <a href="#id"><small>02</small><b>Investigación y Desarrollo</b><span>Grupos, institutos y laboratorios</span></a>
+    <a href="#instalaciones"><small>03</small><b>Infraestructura</b><span>Aulas, salas y alojamiento para actividades</span></a>
+  </nav>
 </section>
 
 <!-- INTRO -->
 <section class="block intro" aria-labelledby="intro-h">
   <div class="wrap intro-grid">
-    <div class="photo rv"><img src="assets/img/fachada-1200.jpg" alt="Frente del edificio del CTDR Los Reyunos al atardecer" width="1200" height="568" loading="lazy"></div>
+    <div class="photo rv"><img src="assets/img/edificio-embalse.jpg" alt="Edificio del centro junto al embalse" width="630" height="500" loading="lazy"></div>
     <div class="rv" style="--d:.12s">
       <p class="idx"><b>—</b> Quiénes somos</p>
       <h2 id="intro-h">Referencia académica en <em>desarrollo regional</em></h2>
-      <p class="lead">Inaugurado el 24 de octubre de 2004 por la Facultad Regional San Rafael, el centro integra educación, investigación aplicada y transferencia de conocimiento al servicio del territorio.</p>
+      <p class="lead">Inaugurado el 24 de octubre de 2004 por la Facultad Regional San Rafael, el centro reúne docencia, investigación aplicada y transferencia de conocimiento al servicio del sur de Mendoza. El alojamiento y el comedor existen para sostener esa actividad.</p>
       <div class="stats">
         <div><strong>2004</strong><span>año de inauguración</span></div>
         <div><strong>+1.000 m²</strong><span>de infraestructura</span></div>
@@ -389,16 +400,32 @@ footer{background:oklch(17% .04 255);color:oklch(80% .02 250);padding-block:3.5r
     <div class="tur-head">
       <div class="rv">
         <p class="idx"><b>03</b> Turismo Universitario</p>
-        <h2 id="tur-h">Alojarse <em>frente al lago</em></h2>
-        <p class="lead">118 plazas en cabañas, apart y hostel, a metros del embalse. <span class="pend">Texto pendiente</span></p>
+        <h2 id="tur-h">Alojamiento para <em>la actividad académica</em></h2>
+        <p class="lead">118 plazas en cabañas, apart y hostel para cursantes, delegaciones y equipos de investigación. Cuando hay disponibilidad, también reciben visitantes. <span class="pend">Texto pendiente</span></p>
       </div>
-      <a class="cta rv" href="#reservas" style="padding:1rem 2rem">Hacer una reserva</a>
     </div>
     <div class="aloj">
       <article class="rv"><div class="photo"><img src="assets/img/cabanas.jpg" alt="Cabañas del complejo sobre la loma" width="500" height="333" loading="lazy"></div><h3>Cabañas</h3><p>Para familias y grupos.</p></article>
       <article class="rv" style="--d:.1s"><div class="photo"><img src="assets/img/balcon-vista.jpg" alt="Balcón con vista al embalse" width="1200" height="630" loading="lazy"></div><h3>Apart</h3><p>Unidades con balcón y vista al embalse.</p></article>
       <article class="rv" style="--d:.2s"><div class="nofoto">Foto del hostel · pendiente</div><h3>Hostel</h3><p>Alojamiento para grupos y estudiantes.</p></article>
+      <article class="rv" style="--d:.3s"><div class="photo"><img src="assets/img/pileta-infinita-2.jpg" alt="Pileta sobre el embalse" width="630" height="430" loading="lazy"></div><h3>Pileta y parque</h3><p>Espacios comunes sobre el embalse.</p></article>
     </div>
+    <form class="book rv" id="reservas" aria-label="Consultar disponibilidad" novalidate>
+      <div class="book-t"><b>Consultar disponibilidad</b><span>La consulta se envía por WhatsApp al centro.</span></div>
+    <label for="f-in"><span>Llegada</span><input id="f-in" name="llegada" type="date" required></label>
+    <label for="f-out"><span>Salida</span><input id="f-out" name="salida" type="date" required></label>
+    <label for="f-guests"><span>Huéspedes</span><select id="f-guests" name="huespedes"><option>2 adultos</option><option>1 adulto</option><option>3 adultos</option><option>4 adultos</option></select></label>
+    <button class="go" type="submit">CONSULTAR</button>
+    <p class="book-msg" id="book-msg" hidden aria-live="polite"></p>
+  </form>
+    <div class="testi-wrap" aria-label="Testimonios">
+    <p class="idx rv"><b>—</b> Lo que dicen quienes se alojaron</p>
+    <div class="testi">
+      <blockquote class="rv">Es un lugar que elijo siempre con mis amigos cuando tenemos días libres, para poder compartir. Una paz hermosa.<cite>Daiana · huésped</cite></blockquote>
+      <blockquote class="rv" style="--d:.1s">Como siempre, todo impecable. De destacar la atención de Melina en todo momento.<cite>César · huésped</cite></blockquote>
+      <blockquote class="rv" style="--d:.2s">Voy con frecuencia y siempre la visita es muy buena.<cite>Sergio · huésped</cite></blockquote>
+    </div>
+  </div>
   </div>
 </section>
 
@@ -419,28 +446,17 @@ footer{background:oklch(17% .04 255);color:oklch(80% .02 250);padding-block:3.5r
     </div>
   </div>
 </section>
-<section class="testi-wrap" aria-label="Testimonios">
-  <div class="wrap">
-    <p class="idx rv"><b>—</b> Lo que dicen quienes nos visitaron</p>
-    <div class="testi">
-      <blockquote class="rv">Es un lugar que elijo siempre con mis amigos cuando tenemos días libres, para poder compartir. Una paz hermosa.<cite>Daiana · huésped</cite></blockquote>
-      <blockquote class="rv" style="--d:.1s">Como siempre, todo impecable. De destacar la atención de Melina en todo momento.<cite>César · huésped</cite></blockquote>
-      <blockquote class="rv" style="--d:.2s">Voy con frecuencia y siempre la visita es muy buena.<cite>Sergio · huésped</cite></blockquote>
-    </div>
-  </div>
-</section>
-
 <!-- INSTALACIONES -->
-<section class="block" id="instalaciones" aria-labelledby="inst-h" style="padding-top:0">
+<section class="block" id="instalaciones" aria-labelledby="inst-h">
   <div class="wrap">
     <p class="idx rv"><b>05</b> Instalaciones</p>
-    <h2 id="inst-h" class="rv">Un predio, <em>cuatro estaciones</em></h2>
-    <p class="lead rv">Más de 1.000 m² de aulas, salas, laboratorios y alojamiento en un predio de 4,5 hectáreas sobre el embalse. <span class="pend">Inventario pendiente</span></p>
+    <h2 id="inst-h" class="rv">Infraestructura para <em>trabajar</em></h2>
+    <p class="lead rv">Más de 1.000 m² de aulas, salas de reunión y espacios de investigación, en un predio de 4,5 hectáreas sobre el embalse. <span class="pend">Inventario pendiente</span></p>
     <div class="inst-grid">
       <div class="photo rv"><img src="assets/img/predio-aereo-1200.jpg" alt="Vista aérea del predio" width="1200" height="568" loading="lazy"></div>
-      <div class="photo rv"><img src="assets/img/invierno-pileta-1200.jpg" alt="Pileta con nieve en invierno" width="1200" height="568" loading="lazy"></div>
-      <div class="photo rv"><img src="assets/img/edificio-embalse.jpg" alt="Edificio junto al embalse" width="630" height="500" loading="lazy"></div>
-      <div class="photo rv"><img src="assets/img/pileta-infinita-2.jpg" alt="Pileta infinita sobre el embalse" width="630" height="430" loading="lazy"></div>
+      <div class="photo rv"><img src="assets/img/fachada-1200.jpg" alt="Frente del edificio principal" width="1200" height="568" loading="lazy"></div>
+      <div class="photo rv"><img src="assets/img/invierno-pileta-1200.jpg" alt="El predio nevado en invierno" width="1200" height="568" loading="lazy"></div>
+      <div class="photo rv"><img src="assets/img/sala-reuniones.jpg" alt="Sala de reuniones" width="500" height="333" loading="lazy"></div>
       <div class="photo rv"><img src="assets/img/parque-embalse-1200.jpg" alt="Parque con vista al embalse" width="1200" height="568" loading="lazy"></div>
       <div class="photo rv"><img src="assets/img/living.jpg" alt="Living de una unidad" width="500" height="333" loading="lazy"></div>
     </div>
