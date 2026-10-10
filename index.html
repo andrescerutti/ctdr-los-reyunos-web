@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CTDR Los Reyunos</title>
+<link rel="icon" href="assets/img/logo-utn-frsr.png">
 <meta name="description" content="Centro Tecnológico de Desarrollo Regional Los Reyunos — UTN Facultad Regional San Rafael.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -98,7 +99,7 @@ h2{font-family:var(--display);font-weight:300;font-size:clamp(2.4rem,1.2rem + 4.
 h2 em{font-style:italic;color:var(--copper-dark)}
 h3{font-family:var(--display);font-weight:500;font-size:1.5rem;line-height:1.15;letter-spacing:-.01em}
 .lead{font-size:clamp(1.05rem,1rem + .35vw,1.28rem);color:var(--ink-soft);max-width:52ch}
-.pend{display:inline-block;font:600 .62rem var(--body);letter-spacing:.12em;text-transform:uppercase;background:oklch(92% 0.1 95);color:oklch(36% 0.08 80);padding:.18rem .55rem;margin-left:.4rem;vertical-align:.1em;outline:1px dashed oklch(60% 0.1 85)}
+.pend{display:inline-block;font:600 .6rem var(--body);letter-spacing:.12em;text-transform:uppercase;color:oklch(50% 0.1 60);padding:.1rem .45rem;margin-left:.35rem;vertical-align:.15em;border:1px dashed currentColor;border-radius:2px;opacity:.85}
 .arrow{display:inline-flex;gap:.6rem;align-items:center;font-weight:600;font-size:.92rem;text-decoration:none;margin-top:1.8rem;padding-bottom:.25rem;border-bottom:1.5px solid var(--copper)}
 .arrow::after{content:"→";transition:transform .4s var(--ease)}
 .arrow:hover::after{transform:translateX(.4rem)}
@@ -119,22 +120,21 @@ h3{font-family:var(--display);font-weight:500;font-size:1.5rem;line-height:1.15;
 
 /* Académica */
 .acad{background:var(--paper-2)}
-.acad-top{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,6rem);align-items:end}
+.acad-top{max-width:62ch}
 .acad-list{margin-top:4rem;border-top:1.5px solid var(--ink)}
-.acad-list li{display:grid;grid-template-columns:4.5rem 1fr 1.2fr auto;gap:1.5rem;align-items:baseline;padding:1.7rem 0;border-bottom:1px solid var(--line);transition:padding .5s var(--ease),background .3s}
+.acad-list li{display:grid;grid-template-columns:1.1fr 1fr auto;gap:1rem 3rem;align-items:baseline;padding:1.6rem 0;border-bottom:1px solid var(--line);transition:padding .5s var(--ease),background .3s}
 .acad-list li:hover{padding-inline:1.2rem;background:var(--paper)}
-.acad-list .n{font-family:var(--display);font-weight:300;font-size:1.3rem;color:var(--copper-dark)}
-.acad-list h3{font-size:clamp(1.3rem,1.1rem + .8vw,1.9rem)}
-.acad-list p{color:var(--ink-soft);font-size:.95rem}
+.acad-list h3{font-size:clamp(1.25rem,1.05rem + .7vw,1.7rem);font-weight:500}
+.acad-list p{color:var(--ink-soft);font-size:1rem;max-width:40ch}
 .acad-list .tag{font:600 .64rem var(--body);letter-spacing:.14em;text-transform:uppercase;background:var(--navy);color:#fff;padding:.3rem .7rem}
-.posgrado{display:grid;grid-template-columns:5fr 7fr;gap:clamp(1.5rem,4vw,4rem);margin-top:5rem;align-items:center}
-.posgrado .photo{aspect-ratio:1}
+.posgrado{display:grid;grid-template-columns:6fr 6fr;gap:clamp(1.5rem,4vw,4rem);margin-top:5rem;align-items:center}
+.posgrado .photo{aspect-ratio:1080/620}
 .posgrado dl{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.8rem;border-top:1px solid var(--ink);padding-top:1.2rem}
 .posgrado dt{font:600 .64rem var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--copper-dark)}
 .posgrado dd{font-family:var(--display);font-size:1.15rem;line-height:1.25}
 .salas{display:grid;grid-template-columns:7fr 5fr;gap:clamp(1.5rem,4vw,4rem);margin-top:5rem;align-items:center}
 .salas .photo{aspect-ratio:3/2}
-@media(max-width:900px){.acad-top,.posgrado,.salas{grid-template-columns:1fr}.acad-list li{grid-template-columns:3rem 1fr}.acad-list p,.acad-list .tag{grid-column:2}.acad-list .tag{justify-self:start}.posgrado dl{grid-template-columns:1fr}}
+@media(max-width:900px){.posgrado,.salas{grid-template-columns:1fr}.acad-list li{grid-template-columns:1fr;gap:.4rem}.acad-list .tag{justify-self:start}.posgrado dl{grid-template-columns:1fr}}
 
 /* I+D */
 .id{background:var(--navy);color:#fff;position:relative;overflow:hidden}
@@ -157,17 +157,12 @@ h3{font-family:var(--display);font-weight:500;font-size:1.5rem;line-height:1.15;
 
 /* Turismo */
 .tur-head{display:flex;justify-content:space-between;align-items:end;gap:2rem;flex-wrap:wrap}
-.aloj{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(1rem,2vw,1.8rem);margin-top:4rem;align-items:start}
-.aloj article:nth-child(1){grid-column:1/span 6}
-.aloj article:nth-child(2){grid-column:7/span 6;margin-top:6rem}
-.aloj article:nth-child(3){grid-column:2/span 5;margin-top:-1rem}
-.aloj article:nth-child(4){grid-column:8/span 5;margin-top:3rem}
-.aloj .photo{aspect-ratio:4/3}
-.aloj .tall .photo{aspect-ratio:3/4}
+.aloj{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,2vw,2rem);margin-top:3.5rem;align-items:start}
+.aloj .photo,.aloj .nofoto{aspect-ratio:4/3}
 .aloj h3{margin:1.1rem 0 .3rem}
 .aloj p{color:var(--ink-soft);font-size:.95rem;max-width:40ch}
-.nofoto{aspect-ratio:4/3;border:1.5px dashed var(--ink-soft);display:grid;place-items:center;text-align:center;font:600 .7rem var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);padding:1rem}
-@media(max-width:860px){.aloj article:nth-child(n){grid-column:1/-1;margin-top:0}}
+.nofoto{border:1.5px dashed var(--ink-soft);display:grid;place-items:center;text-align:center;font:600 .7rem var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);padding:1rem}
+@media(max-width:860px){.aloj{grid-template-columns:1fr}}
 
 /* Restó */
 .resto{position:relative;color:#fff;min-height:48rem;display:flex;align-items:center;overflow:hidden;background:var(--navy)}
@@ -197,15 +192,16 @@ details p{margin-top:.6rem;color:oklch(84% .02 250);font-size:.95rem}
 .inst-grid .photo:nth-child(1){grid-column:1/span 7;grid-row:span 2}
 .inst-grid .photo:nth-child(2){grid-column:8/span 5}
 .inst-grid .photo:nth-child(3){grid-column:8/span 5}
-.inst-grid .photo:nth-child(4){grid-column:1/span 5}
-.inst-grid .photo:nth-child(5){grid-column:6/span 7}
+.inst-grid .photo:nth-child(4){grid-column:1/span 4}
+.inst-grid .photo:nth-child(5){grid-column:5/span 4}
+.inst-grid .photo:nth-child(6){grid-column:9/span 4}
 .serv{display:grid;grid-template-columns:repeat(3,1fr);margin-top:5rem;border-top:1.5px solid var(--ink)}
 .serv>div{padding:2rem 2rem 0 0;position:relative}
 .serv>div+div{padding-left:2rem;border-left:1px solid var(--line)}
 .serv .n{font-family:var(--display);font-weight:300;font-size:2.8rem;color:var(--copper);line-height:1}
 .serv h3{margin:.8rem 0 .5rem}
 .serv p{color:var(--ink-soft);font-size:.95rem}
-@media(max-width:860px){.inst-grid{grid-template-columns:1fr 1fr;grid-auto-rows:11rem}.inst-grid .photo:nth-child(n){grid-column:auto;grid-row:auto}.inst-grid .photo:nth-child(1){grid-column:1/-1;grid-row:span 2}.inst-grid .photo:nth-child(5){grid-column:1/-1}.serv{grid-template-columns:1fr}.serv>div+div{padding-left:0;border-left:0;border-top:1px solid var(--line);margin-top:2rem}}
+@media(max-width:860px){.inst-grid{grid-template-columns:1fr 1fr;grid-auto-rows:11rem}.inst-grid .photo:nth-child(n){grid-column:auto;grid-row:auto}.inst-grid .photo:nth-child(1){grid-column:1/-1;grid-row:span 2}.inst-grid .photo:nth-child(6){grid-column:1/-1}.serv{grid-template-columns:1fr}.serv>div+div{padding-left:0;border-left:0;border-top:1px solid var(--line);margin-top:2rem}}
 
 /* Contacto */
 .contacto{background:var(--navy);color:#fff}
@@ -309,23 +305,21 @@ footer{background:oklch(17% .04 255);color:oklch(80% .02 250);padding-block:3.5r
 <!-- ACADÉMICA -->
 <section class="block acad" id="academica" aria-labelledby="acad-h">
   <div class="wrap">
-    <div class="acad-top">
-      <div class="rv">
-        <p class="idx"><b>01</b> Académica</p>
-        <h2 id="acad-h">Aprender <em>en el territorio</em></h2>
-      </div>
-      <p class="lead rv" style="--d:.1s">Reseña de las actividades académicas del centro y vínculo a cada propuesta. <span class="pend">Texto pendiente</span></p>
+    <div class="acad-top rv">
+      <p class="idx"><b>01</b> Académica</p>
+      <h2 id="acad-h">Aprender <em>en el territorio</em></h2>
+      <p class="lead">Posgrados, capacitaciones y espacios de encuentro para instituciones, empresas y escuelas de la región. <span class="pend">Texto pendiente</span></p>
     </div>
     <ul class="acad-list">
-      <li class="rv"><span class="n">01</span><h3>Módulos Académicos Universitarios</h3><p>Módulos de grado y posgrado dictados en el centro.</p><span></span></li>
-      <li class="rv"><span class="n">02</span><h3>Capacitaciones para escuelas</h3><p>Propuestas didácticas para escuelas de la región.</p><span></span></li>
-      <li class="rv"><span class="n">03</span><h3>Cursos específicos de capacitación</h3><p>Cursos cortos por área temática.</p><span></span></li>
-      <li class="rv"><span class="n">04</span><h3>Salas de reuniones empresarias e institucionales</h3><p>Espacios equipados para jornadas y retiros.</p><span></span></li>
-      <li class="rv"><span class="n">05</span><h3>Maestría en Desarrollo Territorial</h3><p>Título oficial con reconocimiento CONEAU.</p><span class="tag">Posgrado</span></li>
-      <li class="rv"><span class="n">06</span><h3>Diplomatura en Desarrollo Territorial</h3><p>Formación breve, articulada con la Maestría.</p><span class="tag">Posgrado</span></li>
+      <li class="rv"><h3>Módulos Académicos Universitarios</h3><p>Módulos de grado y posgrado dictados en el centro.</p><span></span></li>
+      <li class="rv"><h3>Capacitaciones para escuelas</h3><p>Propuestas didácticas para escuelas de la región.</p><span></span></li>
+      <li class="rv"><h3>Cursos específicos de capacitación</h3><p>Cursos cortos por área temática.</p><span></span></li>
+      <li class="rv"><h3>Salas de reuniones empresarias e institucionales</h3><p>Espacios equipados para jornadas y retiros.</p><span></span></li>
+      <li class="rv"><h3>Maestría en Desarrollo Territorial</h3><p>Título oficial con reconocimiento CONEAU.</p><span class="tag">Posgrado</span></li>
+      <li class="rv"><h3>Diplomatura en Desarrollo Territorial</h3><p>Formación breve, articulada con la Maestría.</p><span class="tag">Posgrado</span></li>
     </ul>
     <div class="posgrado">
-      <div class="photo rv"><img src="assets/img/flyer-maestria.jpg" alt="Afiche de la Maestría en Desarrollo Territorial" width="1080" height="1080" loading="lazy"></div>
+      <div class="photo rv"><img src="assets/img/flyer-maestria-banner.jpg" alt="Afiche de la Maestría en Desarrollo Territorial" width="1080" height="620" loading="lazy"></div>
       <div class="rv" style="--d:.1s">
         <p class="idx"><b>—</b> Destacado</p>
         <h2 style="font-size:clamp(2rem,1.2rem + 3vw,3.8rem)">Maestría en <em>Desarrollo Territorial</em></h2>
@@ -355,7 +349,7 @@ footer{background:oklch(17% .04 255);color:oklch(80% .02 250);padding-block:3.5r
   <div class="wrap">
     <p class="idx rv"><b>02</b> Investigación y Desarrollo</p>
     <h2 id="id-h" class="rv">Ciencia <em>aplicada</em> al territorio</h2>
-    <p class="lead rv">Reseña breve de las actividades I+D+i del centro, con vínculo a cada grupo. <span class="pend">Texto pendiente</span></p>
+    <p class="lead rv">Grupos, institutos y laboratorios que trabajan desde el centro en investigación aplicada y transferencia al territorio. <span class="pend">Texto pendiente</span></p>
     <div class="id-grid">
       <article class="id-cell c1 rv">
         <small>Grupo</small>
@@ -386,15 +380,14 @@ footer{background:oklch(17% .04 255);color:oklch(80% .02 250);padding-block:3.5r
       <div class="rv">
         <p class="idx"><b>03</b> Turismo Universitario</p>
         <h2 id="tur-h">Alojarse <em>frente al lago</em></h2>
-        <p class="lead">Reseña de los alojamientos. <span class="pend">Texto pendiente</span></p>
+        <p class="lead">118 plazas en cabañas, apart y hostel, con el embalse a la vista desde cada unidad. <span class="pend">Texto pendiente</span></p>
       </div>
       <a class="cta rv" href="#" style="padding:1rem 2rem">Hacer una reserva</a>
     </div>
     <div class="aloj">
       <article class="rv"><div class="photo"><img src="assets/img/cabanas.jpg" alt="Cabañas del complejo sobre la loma" width="500" height="333" loading="lazy"></div><h3>Cabañas</h3><p>Para familias y grupos, con parrilla y vista al embalse.</p></article>
-      <article class="rv tall" style="--d:.1s"><div class="photo"><img src="assets/img/balcon-vista.jpg" alt="Balcón con vista al embalse" width="1200" height="630" loading="lazy" style="aspect-ratio:3/4"></div><h3>Apart</h3><p>Unidades con balcón, cocina y servicios.</p></article>
-      <article class="rv"><div class="nofoto">Foto del hostel · pendiente</div><h3>Hostel</h3><p>Habitaciones compartidas para grupos y estudiantes.</p></article>
-      <article class="rv" style="--d:.1s"><div class="photo"><img src="assets/img/living.jpg" alt="Living de una unidad" width="500" height="333" loading="lazy"></div><h3>Interiores</h3><p>Ambientes cuidados y equipados.</p></article>
+      <article class="rv" style="--d:.1s"><div class="photo"><img src="assets/img/balcon-vista.jpg" alt="Balcón con vista al embalse" width="1200" height="630" loading="lazy"></div><h3>Apart</h3><p>Unidades con balcón, cocina y servicios.</p></article>
+      <article class="rv" style="--d:.2s"><div class="nofoto">Foto del hostel · pendiente</div><h3>Hostel</h3><p>Habitaciones compartidas para grupos y estudiantes.</p></article>
     </div>
   </div>
 </section>
@@ -420,9 +413,9 @@ footer{background:oklch(17% .04 255);color:oklch(80% .02 250);padding-block:3.5r
   <div class="wrap">
     <p class="idx rv"><b>—</b> Lo que dicen quienes nos visitaron</p>
     <div class="testi">
-      <blockquote class="rv">Testimonio de un huésped. <span class="pend">A cargar</span><cite>Nombre · Procedencia</cite></blockquote>
-      <blockquote class="rv" style="--d:.1s">Testimonio de una institución. <span class="pend">A cargar</span><cite>Nombre · Institución</cite></blockquote>
-      <blockquote class="rv" style="--d:.2s">Testimonio de un visitante. <span class="pend">A cargar</span><cite>Nombre · Procedencia</cite></blockquote>
+      <blockquote class="rv">Es un lugar que elijo siempre con mis amigos cuando tenemos días libres, para poder compartir. Una paz hermosa.<cite>Daiana · huésped</cite></blockquote>
+      <blockquote class="rv" style="--d:.1s">Como siempre, todo impecable. De destacar la atención de Melina en todo momento.<cite>César · huésped</cite></blockquote>
+      <blockquote class="rv" style="--d:.2s">Voy con frecuencia y siempre la visita es muy buena.<cite>Sergio · huésped</cite></blockquote>
     </div>
   </div>
 </section>
@@ -432,13 +425,14 @@ footer{background:oklch(17% .04 255);color:oklch(80% .02 250);padding-block:3.5r
   <div class="wrap">
     <p class="idx rv"><b>05</b> Instalaciones</p>
     <h2 id="inst-h" class="rv">Un predio, <em>cuatro estaciones</em></h2>
-    <p class="lead rv">Reseña de las instalaciones. <span class="pend">Texto e inventario pendientes</span></p>
+    <p class="lead rv">Más de 1.000 m² de aulas, salas, laboratorios y alojamiento en un predio de 4,5 hectáreas sobre el embalse. <span class="pend">Inventario pendiente</span></p>
     <div class="inst-grid">
       <div class="photo rv"><img src="assets/img/predio-aereo.jpg" alt="Vista aérea del predio" width="1900" height="900" loading="lazy"></div>
       <div class="photo rv"><img src="assets/img/invierno-pileta.jpg" alt="Pileta con nieve en invierno" width="1900" height="900" loading="lazy"></div>
       <div class="photo rv"><img src="assets/img/edificio-embalse.jpg" alt="Edificio junto al embalse" width="630" height="500" loading="lazy"></div>
       <div class="photo rv"><img src="assets/img/pileta-infinita-2.jpg" alt="Pileta infinita sobre el embalse" width="630" height="430" loading="lazy"></div>
       <div class="photo rv"><img src="assets/img/parque-embalse.jpg" alt="Parque con vista al embalse" width="1900" height="900" loading="lazy"></div>
+      <div class="photo rv"><img src="assets/img/living.jpg" alt="Living de una unidad" width="500" height="333" loading="lazy"></div>
     </div>
     <div class="serv">
       <div class="rv"><span class="n">i</span><h3>Servicios universitarios</h3><p>Para la comunidad UTN y otras universidades.</p></div>
