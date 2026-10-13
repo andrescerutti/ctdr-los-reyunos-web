@@ -9,3 +9,8 @@ Maqueta estática del sitio del Centro Tecnológico de Desarrollo Regional Los R
 
 Lo marcado "pendiente" en la página (textos, detalle del GEDT, email, testimonios, logos de instituciones) falta definir.
 Las fotos son de terceros: confirmar con el centro que se pueden reutilizar antes de publicar el sitio definitivo.
+
+## Fuentes
+
+- Sitio oficial: https://www.reyunos.utn.edu.ar (datos institucionales, fotos, testimonios).
+- Service blueprint en FigJam, "blue print - Los Reyunos": https://www.figma.com/board/DGYkYLV0s8m9CCZc7kisGt/blue-print---Los-Reyunos — de ahí salen el público objetivo, los programas para grupos, el circuito de consulta y reserva, la información práctica y las respuestas de las preguntas frecuentes.

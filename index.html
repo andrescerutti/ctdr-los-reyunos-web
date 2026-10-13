@@ -101,7 +101,8 @@ nav a:hover::after,nav a.on::after{transform:scaleX(1)}
 @media(max-width:820px){.hero{flex-direction:column;justify-content:flex-end}.hero-in{padding-bottom:2rem}.dots{display:none}.strip{position:relative;left:auto;bottom:auto;transform:none;width:calc(100% - 2.5rem);margin:0 auto 1.5rem;grid-template-columns:1fr}.strip a{border-right:0;border-bottom:1px solid var(--line)}.intro{padding-top:var(--section)}}
 
 /* Consulta de disponibilidad (dentro de Turismo) */
-.book{margin-top:3.5rem;background:var(--paper-2);border:1px solid var(--line);display:grid;grid-template-columns:1.4fr repeat(3,minmax(0,1fr)) auto}
+.book{margin-top:1.5rem;background:var(--paper-2);border:1px solid var(--line);display:grid;grid-template-columns:repeat(5,minmax(0,1fr)) auto}
+.book-t{grid-column:1/-1;border-right:0;border-bottom:1px solid var(--line)}
 .book-t{padding:1.1rem 1.5rem;display:flex;flex-direction:column;justify-content:center;gap:.2rem;border-right:1px solid var(--line)}
 .book-t b{font-family:var(--display);font-weight:500;font-size:1.2rem}
 .book-t span{font-size:.84rem;color:var(--ink-soft)}
@@ -112,7 +113,7 @@ nav a:hover::after,nav a.on::after{transform:scaleX(1)}
 .book .go{background:var(--navy);color:#fff;border:0;padding:0 2.2rem;font:600 .86rem var(--body);letter-spacing:.06em;cursor:pointer;transition:background .25s}
 .book .go:hover{background:var(--copper)}
 .book-msg{grid-column:1/-1;margin:0;padding:.55rem 1.5rem;font-size:.82rem;background:var(--paper);color:var(--ink-soft);border-top:1px solid var(--line)}.book-msg.err{color:oklch(42% .18 25)}.book-msg[hidden]{display:none}
-@media(max-width:900px){.book{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.book-t{grid-column:1/-1;border-right:0;border-bottom:1px solid var(--line)}.book .go{grid-column:1/-1;padding:1rem}.book label{border-bottom:1px solid var(--line);padding:.9rem 1rem}}
+@media(max-width:900px){.book{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.book .go{grid-column:1/-1;padding:1rem}.book label{border-bottom:1px solid var(--line);padding:.9rem 1rem}}
 
 /* ───── Bloques ───── */
 .block{padding-block:var(--section)}
@@ -186,6 +187,33 @@ h3{font-family:var(--display);font-weight:500;font-size:1.5rem;line-height:1.15;
 .nofoto{border:1.5px dashed var(--ink-soft);display:grid;place-items:center;text-align:center;font:600 .7rem var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);padding:1rem}
 @media(max-width:860px){.aloj{grid-template-columns:1fr}}
 
+/* Turismo: público, programas, pasos, info práctica */
+.sub{font:500 .74rem var(--body);letter-spacing:.24em;text-transform:uppercase;color:var(--copper-dark);margin:4.5rem 0 1.2rem;display:flex;gap:.9rem;align-items:center}
+.sub::after{content:"";flex:1;height:1px;background:var(--line)}
+.publico{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.publico div{background:var(--paper);padding:1.6rem}
+.publico h3{font-size:1.3rem;margin-bottom:.4rem}
+.publico p{color:var(--ink-soft);font-size:.95rem}
+.prog{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,2vw,1.6rem)}
+.prog article{background:var(--paper-2);padding:1.8rem;display:flex;flex-direction:column;gap:.8rem;border-top:3px solid var(--copper)}
+.prog small{font:600 .64rem var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--copper-dark)}
+.prog h3{font-size:1.5rem}
+.prog p{color:var(--ink-soft);font-size:.95rem}
+.prog ul{display:grid;gap:.35rem;margin-top:.4rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.92rem}
+.prog li{padding-left:1.1rem;position:relative}
+.prog li::before{content:"";position:absolute;left:0;top:.6em;width:.45rem;height:.45rem;background:var(--copper)}
+.pasos{display:grid;grid-template-columns:repeat(5,1fr);gap:1.5rem;counter-reset:paso}
+.pasos div{counter-increment:paso;padding-top:1rem;border-top:1.5px solid var(--ink)}
+.pasos div::before{content:counter(paso,decimal-leading-zero);font-family:var(--display);font-weight:300;font-size:2rem;color:var(--copper);display:block;line-height:1;margin-bottom:.5rem}
+.pasos b{display:block;font-family:var(--display);font-weight:500;font-size:1.1rem;line-height:1.2;margin-bottom:.3rem}
+.pasos p{font-size:.88rem;color:var(--ink-soft)}
+.info{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem 2.5rem}
+.info div{border-top:1px solid var(--line);padding-top:.9rem}
+.info dt{font:600 .64rem var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--copper-dark);margin-bottom:.25rem}
+.info dd{font-size:.95rem}
+@media(max-width:900px){.publico,.prog,.info{grid-template-columns:1fr}.pasos{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.pasos{grid-template-columns:1fr}}
+
 /* Restó */
 .resto{position:relative;color:#fff;min-height:48rem;display:flex;align-items:center;overflow:hidden;background:var(--navy)}
 .resto>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -217,7 +245,12 @@ details p{margin-top:.6rem;color:oklch(84% .02 250);font-size:.95rem}
 .inst-grid .photo:nth-child(4){grid-column:1/span 4}
 .inst-grid .photo:nth-child(5){grid-column:5/span 4}
 .inst-grid .photo:nth-child(6){grid-column:9/span 4}
-.serv{display:grid;grid-template-columns:repeat(3,1fr);margin-top:5rem;border-top:1.5px solid var(--ink)}
+.espacios{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:3rem}
+.espacios div{background:var(--paper);padding:1.3rem 1.4rem}
+.espacios b{display:block;font-family:var(--display);font-weight:500;font-size:1.15rem;margin-bottom:.2rem}
+.espacios span{font-size:.86rem;color:var(--ink-soft)}
+@media(max-width:900px){.espacios{grid-template-columns:1fr 1fr}}
+.serv{display:grid;grid-template-columns:repeat(3,1fr);margin-top:4rem;border-top:1.5px solid var(--ink)}
 .serv>div{padding:2rem 2rem 0 0;position:relative}
 .serv>div+div{padding-left:2rem;border-left:1px solid var(--line)}
 .serv .n{font-family:var(--display);font-weight:300;font-size:2.8rem;color:var(--copper);line-height:1}
@@ -397,27 +430,69 @@ footer{background:oklch(17% .04 255);color:oklch(80% .02 250);padding-block:3.5r
 <!-- TURISMO -->
 <section class="block" id="turismo" aria-labelledby="tur-h">
   <div class="wrap">
-    <div class="tur-head">
-      <div class="rv">
-        <p class="idx"><b>03</b> Turismo Universitario</p>
-        <h2 id="tur-h">Alojamiento para <em>la actividad académica</em></h2>
-        <p class="lead">118 plazas en cabañas, apart y hostel para cursantes, delegaciones y equipos de investigación. Cuando hay disponibilidad, también reciben visitantes. <span class="pend">Texto pendiente</span></p>
-      </div>
+    <div class="rv" style="max-width:66ch">
+      <p class="idx"><b>03</b> Turismo Universitario</p>
+      <h2 id="tur-h">Programas para <em>instituciones y grupos</em></h2>
+      <p class="lead">El centro recibe delegaciones académicas, escuelas, empresas y grupos organizados con programas a medida que combinan actividad académica, visitas técnicas y alojamiento. El público general se recibe cuando hay disponibilidad, pero no es el foco.</p>
     </div>
-    <div class="aloj">
+
+    <p class="sub">Para quién</p>
+    <div class="publico">
+      <div class="rv"><h3>Delegaciones académicas</h3><p>Docentes, investigadores, conferencistas, estudiantes de posgrado y delegaciones universitarias que vienen a cursar, investigar o dictar.</p></div>
+      <div class="rv" style="--d:.1s"><h3>Escuelas y grupos organizados</h3><p>Contingentes escolares y grupos cerrados con reserva previa, con actividades guiadas y seguro incluido.</p></div>
+      <div class="rv" style="--d:.2s"><h3>Empresas e instituciones</h3><p>Jornadas de trabajo, capacitaciones y retiros, con salas, coffee break y alojamiento en el mismo predio.</p></div>
+    </div>
+
+    <p class="sub">Programas <span class="pend">Propuesta: tres combos cerrados con precio predefinido</span></p>
+    <div class="prog">
+      <article class="rv"><small>Un día</small><h3>Jornada técnica</h3><p>Visita guiada con charla técnica a cargo de docentes de la UTN.</p>
+        <ul><li>Visita a la Central Hidroeléctrica Los Reyunos</li><li>Charla técnica en aula</li><li>Almuerzo o coffee break</li><li>Seguro de accidentes personales</li></ul></article>
+      <article class="rv" style="--d:.1s"><small>Dos o tres noches</small><h3>Estadía académica</h3><p>Para cursadas intensivas, encuentros de posgrado y equipos de investigación.</p>
+        <ul><li>Aulas y salas de reunión</li><li>Alojamiento con desayuno; media pensión o pensión completa opcional</li><li>Observatorio y espacios comunes</li><li>Salidas a bodegas y aceiteras de la zona</li></ul></article>
+      <article class="rv" style="--d:.2s"><small>Escuelas</small><h3>Campamento educativo</h3><p>Contingentes escolares con docentes a cargo y actividades guiadas por personal del centro.</p>
+        <ul><li>Actividades didácticas en el predio</li><li>Pileta con guardavidas</li><li>Comidas incluidas</li><li>Seguro y lista de asistentes</li></ul></article>
+    </div>
+
+    <p class="sub">Cómo se organiza</p>
+    <div class="pasos">
+      <div class="rv"><b>Consulta</b><p>Por el formulario de esta página o por WhatsApp: fechas, tipo de grupo, cantidad de personas y actividades de interés.</p></div>
+      <div class="rv" style="--d:.05s"><b>Cotización</b><p>El centro envía por mail un presupuesto detallado según el programa elegido.</p></div>
+      <div class="rv" style="--d:.1s"><b>Confirmación</b><p>Lista de asistentes con datos para el seguro y seña del 30 %.</p></div>
+      <div class="rv" style="--d:.15s"><b>Coordinación</b><p>Las visitas a la Central Hidroeléctrica requieren permiso institucional con un mes de anticipación.</p></div>
+      <div class="rv" style="--d:.2s"><b>Estadía</b><p>Recepción y docente guía acompañan al grupo durante las actividades.</p></div>
+    </div>
+
+    <p class="sub">Alojamiento</p>
+    <p class="lead rv" style="margin-top:-.4rem;margin-bottom:1.8rem">118 plazas en cabañas, apart y hostel, a metros del embalse.</p>
+    <div class="aloj" style="margin-top:0">
       <article class="rv"><div class="photo"><img src="assets/img/cabanas.jpg" alt="Cabañas del complejo sobre la loma" width="500" height="333" loading="lazy"></div><h3>Cabañas</h3><p>Para familias y grupos.</p></article>
       <article class="rv" style="--d:.1s"><div class="photo"><img src="assets/img/balcon-vista.jpg" alt="Balcón con vista al embalse" width="1200" height="630" loading="lazy"></div><h3>Apart</h3><p>Unidades con balcón y vista al embalse.</p></article>
       <article class="rv" style="--d:.2s"><div class="nofoto">Foto del hostel · pendiente</div><h3>Hostel</h3><p>Alojamiento para grupos y estudiantes.</p></article>
       <article class="rv" style="--d:.3s"><div class="photo"><img src="assets/img/pileta-infinita-2.jpg" alt="Pileta sobre el embalse" width="630" height="430" loading="lazy"></div><h3>Pileta y parque</h3><p>Espacios comunes sobre el embalse.</p></article>
     </div>
+
+    <p class="sub">Consultar disponibilidad</p>
     <form class="book rv" id="reservas" aria-label="Consultar disponibilidad" novalidate>
-      <div class="book-t"><b>Consultar disponibilidad</b><span>La consulta se envía por WhatsApp al centro.</span></div>
-    <label for="f-in"><span>Llegada</span><input id="f-in" name="llegada" type="date" required></label>
-    <label for="f-out"><span>Salida</span><input id="f-out" name="salida" type="date" required></label>
-    <label for="f-guests"><span>Huéspedes</span><select id="f-guests" name="huespedes"><option>2 adultos</option><option>1 adulto</option><option>3 adultos</option><option>4 adultos</option></select></label>
-    <button class="go" type="submit">CONSULTAR</button>
-    <p class="book-msg" id="book-msg" hidden aria-live="polite"></p>
-  </form>
+      <div class="book-t"><b>Armá tu consulta</b><span>Se envía por WhatsApp al centro con todos los datos cargados. Respuesta en horario de recepción.</span></div>
+      <label for="f-tipo"><span>Tipo de grupo</span><select id="f-tipo" name="tipo"><option>Delegación académica</option><option>Escuela</option><option>Empresa o institución</option><option>Grupo organizado</option><option>Familia o particular</option></select></label>
+      <label for="f-in"><span>Llegada</span><input id="f-in" name="llegada" type="date" required></label>
+      <label for="f-out"><span>Salida</span><input id="f-out" name="salida" type="date" required></label>
+      <label for="f-guests"><span>Personas</span><input id="f-guests" name="personas" type="number" min="1" max="118" value="2" inputmode="numeric"></label>
+      <label for="f-com"><span>Comidas</span><select id="f-com" name="comidas"><option>Solo desayuno</option><option>Media pensión</option><option>Pensión completa</option></select></label>
+      <button class="go" type="submit">CONSULTAR</button>
+      <p class="book-msg" id="book-msg" hidden aria-live="polite"></p>
+    </form>
+
+    <p class="sub">Información práctica</p>
+    <dl class="info">
+      <div class="rv"><dt>Recepción</dt><dd>De 9 a 15 h. Fuera de ese horario, el contacto del sereno está en la cartelería del complejo. <span class="pend">Horario a confirmar</span></dd></div>
+      <div class="rv"><dt>Comidas</dt><dd>Desayuno incluido. Media pensión o pensión completa se contratan al reservar y se informan al restaurante.</dd></div>
+      <div class="rv"><dt>Pago</dt><dd>Transferencia o tarjeta de crédito y débito. Efectivo solo en casos excepcionales.</dd></div>
+      <div class="rv"><dt>Check in y check out</dt><dd><span class="pend" style="margin:0">Horarios a definir</span></dd></div>
+      <div class="rv"><dt>Ropa blanca</dt><dd>Sábanas y toallas se cambian cada tres días por pedido del huésped.</dd></div>
+      <div class="rv"><dt>Al llegar</dt><dd>Cartelería con mapa del complejo, horarios, teléfonos y recomendaciones de la zona. <span class="pend">Mapa pendiente</span></dd></div>
+    </dl>
+
     <div class="testi-wrap" aria-label="Testimonios">
     <p class="idx rv"><b>—</b> Lo que dicen quienes se alojaron</p>
     <div class="testi">
@@ -436,12 +511,13 @@ footer{background:oklch(17% .04 255);color:oklch(80% .02 250);padding-block:3.5r
     <div class="resto-in rv">
       <p class="idx"><b>04</b> Restó</p>
       <h2 id="resto-h">Mesa con <em>vista al embalse</em></h2>
-      <p class="lead">Un comedor que funciona también como restaurante. <span class="pend">Carta y horarios pendientes</span></p>
+      <p class="lead">El comedor del centro funciona también como restaurante. Sirve el desayuno de los huéspedes y, con aviso previo, almuerzos, cenas, coffee breaks y asados para grupos. <span class="pend">Carta y horarios pendientes</span></p>
       <a class="cta" href="https://wa.me/542604021708?text=Hola%2C%20quiero%20reservar%20una%20mesa%20en%20el%20rest%C3%B3%20del%20CTDR%20Los%20Reyunos." target="_blank" rel="noopener" style="display:inline-block;margin-top:1.6rem;padding:1rem 2rem">Reservar mesa por WhatsApp</a>
       <div class="faq">
-        <details><summary>¿Hace falta reservar?</summary><p>Respuesta a definir.</p></details>
-        <details><summary>¿Atienden grupos y eventos?</summary><p>Respuesta a definir.</p></details>
-        <details><summary>¿Cuál es el horario de atención?</summary><p>Respuesta a definir.</p></details>
+        <details><summary>¿El desayuno está incluido?</summary><p>Sí, para todos los huéspedes. Es un desayuno buffet.</p></details>
+        <details><summary>¿Puedo contratar almuerzo y cena?</summary><p>Sí. La media pensión o la pensión completa se eligen al reservar; el restaurante recibe el aviso con la confirmación.</p></details>
+        <details><summary>¿Atienden grupos y eventos?</summary><p>Sí: coffee breaks, almuerzos de trabajo, asados y catering para jornadas y contingentes, con aviso previo.</p></details>
+        <details><summary>¿Cuál es el horario de atención?</summary><p><span class="pend" style="margin:0">A definir</span></p></details>
       </div>
     </div>
   </div>
@@ -459,6 +535,16 @@ footer{background:oklch(17% .04 255);color:oklch(80% .02 250);padding-block:3.5r
       <div class="photo rv"><img src="assets/img/sala-reuniones.jpg" alt="Sala de reuniones" width="500" height="333" loading="lazy"></div>
       <div class="photo rv"><img src="assets/img/parque-embalse-1200.jpg" alt="Parque con vista al embalse" width="1200" height="568" loading="lazy"></div>
       <div class="photo rv"><img src="assets/img/living.jpg" alt="Living de una unidad" width="500" height="333" loading="lazy"></div>
+    </div>
+    <div class="espacios">
+      <div class="rv"><b>Aulas</b><span>Para cursadas, módulos y charlas técnicas.</span></div>
+      <div class="rv" style="--d:.05s"><b>Salas de reunión</b><span>Jornadas empresarias e institucionales.</span></div>
+      <div class="rv" style="--d:.1s"><b>Observatorio</b><span>Actividades de observación para grupos.</span></div>
+      <div class="rv" style="--d:.15s"><b>Comedor y restó</b><span>Desayuno, pensión y catering para grupos.</span></div>
+      <div class="rv" style="--d:.2s"><b>Alojamiento</b><span>118 plazas en cabañas, apart y hostel.</span></div>
+      <div class="rv" style="--d:.25s"><b>Pileta y parque</b><span>Con guardavidas en temporada.</span></div>
+      <div class="rv" style="--d:.3s"><b>Estacionamiento</b><span>Dentro del predio.</span></div>
+      <div class="rv" style="--d:.35s"><b>Central Hidroeléctrica</b><span>Visitas técnicas con permiso institucional.</span></div>
     </div>
     <div class="serv">
       <div class="rv"><span class="n">i</span><h3>Servicios universitarios</h3><p>Para la comunidad UTN y otras universidades.</p></div>
@@ -479,6 +565,7 @@ footer{background:oklch(17% .04 255);color:oklch(80% .02 250);padding-block:3.5r
           <div><dt>Dirección</dt><dd>Ruta 150, Los Reyunos<br>Villa 25 de Mayo, San Rafael, Mendoza</dd></div>
           <div><dt>Teléfono</dt><dd><a href="tel:+542604021708">+54 260 402 1708</a></dd></div>
           <div><dt>Email</dt><dd>— <span class="pend">a definir</span></dd></div>
+          <div><dt>Recepción</dt><dd>9 a 15 h <span class="pend">a confirmar</span></dd></div>
           <div><dt>Redes</dt><dd>Instagram @utn_los_reyunos<br>Facebook /utnlosreyunos</dd></div>
         </dl>
         <a class="wsap" href="https://wa.me/542604021708" target="_blank" rel="noopener"><i></i> Consultas y reservas por WhatsApp</a>
@@ -513,7 +600,7 @@ nav.addEventListener('click',e=>{if(e.target.tagName==='A'){nav.classList.remove
 addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){nav.classList.remove('open');btn.setAttribute('aria-expanded',false);btn.focus()}});
 
 // Reservas: validación de fechas y consulta por WhatsApp (el canal oficial de reservas)
-const form=document.getElementById('reservas'),fIn=document.getElementById('f-in'),fOut=document.getElementById('f-out'),fG=document.getElementById('f-guests'),msg=document.getElementById('book-msg');
+const form=document.getElementById('reservas'),fIn=document.getElementById('f-in'),fOut=document.getElementById('f-out'),fG=document.getElementById('f-guests'),fT=document.getElementById('f-tipo'),fC=document.getElementById('f-com'),msg=document.getElementById('book-msg');
 const iso=d=>d.toISOString().slice(0,10),addDays=(s,n)=>{const d=new Date(s+'T12:00:00');d.setDate(d.getDate()+n);return iso(d)};
 const today=iso(new Date());fIn.min=today;fOut.min=addDays(today,1);
 const nights=()=>Math.round((new Date(fOut.value+'T12:00:00')-new Date(fIn.value+'T12:00:00'))/864e5);
@@ -524,8 +611,9 @@ form.addEventListener('submit',e=>{e.preventDefault();
   if(!fIn.value||!fOut.value)return say('Elegí fecha de llegada y de salida.',true);
   if(fIn.value<today)return say('La llegada no puede ser anterior a hoy.',true);
   if(fOut.value<=fIn.value)return say('La salida tiene que ser posterior a la llegada.',true);
+  const n=parseInt(fG.value,10);if(!(n>=1&&n<=118))return say('Indicá cuántas personas son (entre 1 y 118).',true);
   const fmt=s=>new Date(s+'T12:00:00').toLocaleDateString('es-AR',{day:'numeric',month:'long'});
-  const t=`Hola, quiero consultar disponibilidad en el CTDR Los Reyunos del ${fmt(fIn.value)} al ${fmt(fOut.value)} (${nights()} ${nights()===1?'noche':'noches'}), ${fG.value}.`;
+  const t=`Hola, quiero consultar disponibilidad en el CTDR Los Reyunos.\nTipo de grupo: ${fT.value}\nFechas: del ${fmt(fIn.value)} al ${fmt(fOut.value)} (${nights()} ${nights()===1?'noche':'noches'})\nPersonas: ${n}\nComidas: ${fC.value}`;
   say('Abriendo WhatsApp con tu consulta…');window.open('https://wa.me/542604021708?text='+encodeURIComponent(t),'_blank','noopener');
 });
 
